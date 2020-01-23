@@ -1,0 +1,34 @@
+@startuml
+skinparam class {
+	BackgroundColor White
+	ArrowColor Black
+	BorderColor Black
+}
+class Modules as "Модуль"
+
+
+class In as "Внутренний"
+class Out as "Внешний"
+
+class Prepare as "Подготовка точки контроля"
+class Collection as "Сбор данных"
+class Analysis as "Анализ данных"
+
+class ErrorReaction as "Обработка ошибок"
+class Definition as "Определение контрольных параметров"
+
+
+Modules<|-- In
+Modules<|-- Out
+
+In<|-- Prepare
+In<|-- Collection 
+In<|-- Analysis
+
+Out<|-- ErrorReaction
+Out<|-- Definition
+
+hide members
+hide circle
+hide methods
+@enduml
